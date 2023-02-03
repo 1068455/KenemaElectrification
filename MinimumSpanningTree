@@ -1,0 +1,31 @@
+```
+import numpy as np
+import geopandas as gp
+import matplotlib.pyplot as plt
+from sklearn.cluster import OPTICS, cluster_optics_dbscan
+import time
+import networkx as nx
+import pandas as pd
+from math import radians, sin, cos, asin, sqrt
+from scipy.spatial import Delaunay
+from shapely.geometry import LineString
+import warnings
+warnings.filterwarnings("ignore")
+```
+
+```
+# Enter the right datafile
+buildings = 'SLE_KenemaRadius_OSMBuildings.geojson'
+
+print('Loading data...')
+# Prepare building data - read as geodataframe
+gdf = gp.read_file(buildings)
+# Get the number of rows (points) in the GeoDataFrame
+no_points = gdf.shape[0]
+gdf.head()
+print(no_points)
+```
+
+
+
+
